@@ -21,6 +21,7 @@ var costoViaggioMinori = (costoViaggio - (costoViaggio * 0.2)).toFixed(2);
 var costoViaggioAnziani = (costoViaggio - (costoViaggio * 0.4)).toFixed(2);
 console.log(costoViaggioMinori, costoViaggioAnziani);
 var elementoOutput = document.getElementById('biglietto')
+// a seconda dell'età verrà visualizzato un costo biglietto
 if (eta <= 18) {
   elementoOutput.innerHTML = costoViaggioMinori + "€"
 } else if (eta >= 65) {

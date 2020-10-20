@@ -20,11 +20,13 @@ console.log(costoViaggio, "costodelbiglietto");
 var costoViaggioMinori = (costoViaggio - (costoViaggio * 0.2)).toFixed(2);
 var costoViaggioAnziani = (costoViaggio - (costoViaggio * 0.4)).toFixed(2);
 console.log(costoViaggioMinori, costoViaggioAnziani);
-
-if (eta <= 18) { document.getElementById('biglietto').innerHTML = costoViaggioMinori
-} else if (eta >= 65) {   document.getElementById('biglietto').innerHTML = costoViaggioAnziani
+var elementoOutput = document.getElementById('biglietto')
+if (eta <= 18) {
+  elementoOutput.innerHTML = costoViaggioMinori + "€"
+} else if (eta >= 65) {
+  elementoOutput.innerHTML = costoViaggioAnziani + "€"
 } else {
-document.getElementById('biglietto').innerHTML = costoViaggio
+  elementoOutput.innerHTML = costoViaggio + "€"
 }
 
 // PREZZO TOTALE DEL VIAGGIO, OUTPUT

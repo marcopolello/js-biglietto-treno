@@ -17,14 +17,14 @@ costoViaggio = euro * km;
 console.log(costoViaggio, "costodelbiglietto");
 
 // SCONTO A SECONDA DELL'ETA DEL VIAGGIATORE
-var costoViaggioMinori;
-var costoViaggioAnziani;
+var costoViaggioMinori = (costoViaggio - (costoViaggio * 0.2)).toFixed(2);
+var costoViaggioAnziani = (costoViaggio - (costoViaggio * 0.4)).toFixed(2);
+console.log(costoViaggioMinori, costoViaggioAnziani);
 
-if (eta <= 18) { costoViaggioMinori = costoViaggio - (costoViaggio * 0.2);
-  // sconto del 20%
-} else if (eta >= 65) { costoViaggioAnziani = costoViaggio - (costoViaggio * 0.4);
-  // sconto del 40%
+if (eta <= 18) { document.getElementById('biglietto').innerHTML = costoViaggioMinori
+} else if (eta >= 65) {   document.getElementById('biglietto').innerHTML = costoViaggioAnziani
+} else {
+document.getElementById('biglietto').innerHTML = costoViaggio
 }
 
 // PREZZO TOTALE DEL VIAGGIO, OUTPUT
-console.log(costoViaggioMinori, costoViaggioAnziani);

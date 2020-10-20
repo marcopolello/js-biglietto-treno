@@ -10,11 +10,21 @@ var euro = 0.21;
 var costoViaggio;
 var km = parseInt(prompt("scrivi il numero di km che vuoi percorrere"));
 var eta = parseInt(prompt("scrivi la tua età"));
-console.log(km,eta);
+console.log(km,"kmdelviaggio",eta, "etàviaggiatore");
 
 //PREZZO DEL BIGLIETTO A SECONDA DEI KM
 costoViaggio = euro * km;
-console.log(costoViaggio);
+console.log(costoViaggio, "costodelbiglietto");
 
+// SCONTO A SECONDA DELL'ETA DEL VIAGGIATORE
+var costoViaggioMinori;
+var costoViaggioAnziani;
+
+if (eta <= 18) { costoViaggioMinori = costoViaggio - (costoViaggio * 0.2);
+  // sconto del 20%
+} else if (eta >= 65) { costoViaggioAnziani = costoViaggio - (costoViaggio * 0.4);
+  // sconto del 40%
+}
 
 // PREZZO TOTALE DEL VIAGGIO, OUTPUT
+console.log(costoViaggioMinori, costoViaggioAnziani);
